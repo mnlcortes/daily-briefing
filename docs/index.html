@@ -4,40 +4,389 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'none'; object-src 'none';"/>
-  <title>Daily Briefing — Manuel Cortés</title>
+  <title>Daily Briefing — Sábado, 11 de abril de 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet"/>
   <style>
-    :root { --bg:#0f0f0f; --surface:#1a1a1a; --border:#2e2e2e; --text:#e8e6e1; --text-muted:#8a8680; --accent:#c8a96e; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { background:var(--bg); color:var(--text); font-family:'Source Serif 4',Georgia,serif; font-size:17px; line-height:1.8; max-width:820px; margin:0 auto; padding:2rem 1.5rem 6rem; min-height:100vh; display:flex; flex-direction:column; }
-    header { border-bottom:1px solid var(--border); padding-bottom:1.5rem; margin-bottom:3rem; }
-    .label { font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem; }
-    h1 { font-size:2rem; font-weight:600; color:var(--accent); line-height:1.2; margin-bottom:0.25rem; }
-    .byline { font-size:0.85rem; color:var(--text-muted); font-style:italic; }
-    .center { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:1rem; padding:4rem 0; }
-    .icon { width:32px; height:32px; border:1px solid var(--border); border-radius:50%; margin:0 auto; opacity:0.4; }
-    .center h2 { font-size:1.1rem; font-weight:400; color:var(--text-muted); }
-    .center p { font-size:0.88rem; color:var(--text-muted); max-width:420px; }
-    footer { text-align:center; font-size:0.75rem; color:var(--text-muted); border-top:1px solid var(--border); padding-top:2rem; margin-top:4rem; }
+    :root {
+      --bg:         #0f0f0f;
+      --surface:    #1a1a1a;
+      --surface2:   #242424;
+      --border:     #2e2e2e;
+      --text:       #e8e6e1;
+      --text-muted: #8a8680;
+      --accent:     #c8a96e;
+      --accent2:    #7eb8c8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 6rem;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .header-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+    .byline { font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+    .sintesis {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+    }
+    .sintesis h2 {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .sintesis p { margin-bottom: 0.75rem; }
+    .sintesis p:last-child { margin-bottom: 0; }
+    section { margin-bottom: 3.5rem; }
+    section > h2 {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    section > h2 span { color: var(--accent2); margin-right: 0.5rem; }
+    .item {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .item-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4; }
+    .item-title a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .item-title a:hover { color: var(--accent); border-color: var(--accent); }
+    .item-meta { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .item p { color: #c8c4bd; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .potencialidades {
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-top: 0.75rem;
+    }
+    .potencialidades-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+    .potencialidades p { color: #a8c8d8; font-size: 0.88rem; margin: 0; }
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .highlight-card .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .vocab-item { margin-bottom: 1.5rem; }
+    .vocab-term { font-weight: 600; color: var(--accent); font-size: 1rem; }
+    .vocab-def { color: #c8c4bd; font-size: 0.92rem; margin-top: 0.2rem; }
+    .refs { font-size: 0.85rem; }
+    .refs li {
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      list-style: none;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .refs li::before { content: '→'; position: absolute; left: 0; color: var(--border); }
+    .refs a { color: var(--accent2); text-decoration: none; }
+    .refs a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 4rem;
+    }
   </style>
 </head>
 <body>
 <header>
-  <div class="label">Daily Briefing</div>
-  <h1>En preparación</h1>
+  <div class="header-label">Daily Briefing</div>
+  <h1>Sábado, 11 de abril de 2026</h1>
   <div class="byline">Manuel Cortés &mdash; Ingeniero de Datos</div>
 </header>
-<div class="center">
-  <svg class="icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="16" cy="16" r="15" stroke="#8a8680" stroke-width="1"/>
-    <line x1="16" y1="8" x2="16" y2="16" stroke="#8a8680" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="16" y1="16" x2="21" y2="21" stroke="#8a8680" stroke-width="1.5" stroke-linecap="round"/>
-  </svg>
-  <h2>El primer briefing se generará pronto</h2>
-  <p>El agente buscará noticias en tiempo real y publicará la primera edición cuando se ejecute el workflow de GitHub Actions.</p>
+<div class="sintesis">
+  <h2>Síntesis ejecutiva</h2>
+  <p>Esta semana el ecosistema de IA se ve marcado por la presentación de <strong>Claude Mythos Preview</strong> de Anthropic, un modelo considerado "demasiado potente" para lanzamiento público, lo que ha provocado una reunión de emergencia del Secretario del Tesoro de EE.UU. con los principales bancos por riesgos cibernéticos. Meta lanza <strong>Muse Spark</strong>, su primer modelo bajo Meta Superintelligence Labs, mientras OpenAI alcanza $25B de ingresos anualizados y contempla salida a bolsa en 2026. En data engineering, Snowflake duplica su apuesta por Apache Iceberg V3 y el estándar MCP de Anthropic supera los 97 millones de instalaciones, consolidándose como infraestructura crítica para agentes de IA. Intel y SambaNova presentan arquitectura híbrida CPU-GPU para inferencia de IA agéntica.</p>
+  <p>En el frente geopolítico, China lanza su plan quinquenal 2026-2030 con énfasis en soberanía tecnológica en IA, 6G e interfaces cerebro-computadora. Las tensiones en Medio Oriente impactan la infraestructura energética para centros de datos, con las Big Tech financiando reactores nucleares modulares. En legislación, la EU AI Act entra en fase crítica de aplicación en agosto 2026 para sistemas de alto riesgo. Chile avanza con CENIA lanzando los benchmarks <strong>Trueque</strong> y <strong>Choclo</strong> para evaluar conocimiento latinoamericano de LLMs, mientras un estudio revela que solo el 3,6% de empresas chilenas ha escalado proyectos de IA con impacto medible.</p>
 </div>
-<footer>mnlcortes.github.io/daily-briefing</footer>
+
+<section>
+  <h2><span>★</span>Herramienta / Paper / Dato de la semana</h2>
+  <div class="highlight-card">
+    <span class="tag">Herramienta</span>
+    <div class="item-title"><a href="https://radicaldatascience.wordpress.com/2026/04/09/ai-news-briefs-bulletin-board-for-april-2026/">Apache Iceberg V3 con soporte completo de Snowflake</a></div>
+    <p>Snowflake está apostando por open source e interoperabilidad como núcleo del futuro de la IA, reflejando un cambio empresarial hacia arquitecturas de datos abiertas y desacopladas. La premisa es que la interoperabilidad permite que los datos no necesiten ser copiados, movidos o bloqueados en un solo sistema para que las empresas obtengan valor de la IA.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Iceberg V3 habilita time-travel, schema evolution y partición oculta sin lock-in de vendor. Para pipelines de data engineering, esto significa portabilidad entre Spark, Trino, Dremio y ahora Snowflake nativo. Considerar migración gradual de tablas Delta Lake a Iceberg para maximizar interoperabilidad multi-engine.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>I</span>Inteligencia Artificial</h2>
+  
+  <div class="item">
+    <div class="item-title"><a href="http://www.cubadebate.cu/noticias/2026/04/10/temor-por-el-poder-de-ia-reune-de-urgencia-a-la-gran-banca-de-estados-unidos/">Anthropic presenta Claude Mythos Preview: modelo "demasiado potente" genera alarma en la banca estadounidense</a></div>
+    <div class="item-meta">Financial Times / Cubadebate &mdash; 10 abril 2026</div>
+    <p>El secretario del Tesoro de Estados Unidos, Scott Bessent, convocó a los líderes de algunos de los bancos más grandes del país para discutir el riesgo cibernético que plantea el último modelo de IA de Anthropic. La creciente potencia de la IA generó preocupación entre altos funcionarios después de que Anthropic presentara Claude Mythos Preview, asegurando que es demasiado potente para su lanzamiento público.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Señal de que los modelos frontier están alcanzando capacidades que requieren nuevos frameworks de evaluación de seguridad. Para equipos de ML, implica que la integración de modelos avanzados requerirá controles adicionales de sandboxing, rate limiting y auditoría antes del deployment en producción.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html">Meta lanza Muse Spark: primer modelo de Meta Superintelligence Labs</a></div>
+    <div class="item-meta">CNBC &mdash; 8 abril 2026</div>
+    <p>Meta debutó su primer modelo de IA importante, Muse Spark, encabezado por el chief AI officer Alexandr Wang, quien se unió hace nueve meses y lidera Meta Superintelligence Labs. Meta indicó que técnicas mejoradas de entrenamiento junto con infraestructura tecnológica reconstruida ha permitido crear modelos de IA más pequeños que son tan capaces como su variante Llama 4 de tamaño medio con "un orden de magnitud menos de cómputo".</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>El enfoque de modelos pequeños pero eficientes es relevante para edge deployment y reducción de costos de inferencia. Meta experimenta con un nuevo flujo de ingresos ofreciendo acceso a la tecnología de Muse Spark a desarrolladores de terceros vía API. Monitorear disponibilidad del API para casos de uso multimodal.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">OpenAI supera $25B de ingresos anualizados y prepara IPO</a></div>
+    <div class="item-meta">Crescendo AI &mdash; abril 2026</div>
+    <p>OpenAI ha superado $25 mil millones en ingresos anualizados y está tomando pasos iniciales hacia una cotización pública, potencialmente a finales de 2026. El rival Anthropic se acerca a $19 mil millones en ingresos anualizados.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>La escala de ingresos confirma la viabilidad comercial de LLM-as-a-service. Para arquitecturas de data engineering, considerar estrategias de multi-provider con fallbacks entre OpenAI, Anthropic y modelos open-source para mitigar vendor lock-in y optimizar costos según workload.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>II</span>Geopolítica</h2>
+  
+  <div class="item">
+    <div class="item-title"><a href="https://es.gizmodo.com/china-ya-puso-fecha-a-su-proximo-gran-salto-tecnologico-su-nuevo-plan-quinquenal-revela-como-quiere-dominar-la-ia-los-robots-la-energia-del-futuro-y-hasta-prepararse-para-mundo-mas-hostil-2000230003">China aprueba plan quinquenal 2026-2030: IA, 6G e interfaces cerebro-computadora como prioridad</a></div>
+    <div class="item-meta">Gizmodo &mdash; 9 abril 2026</div>
+    <p>Pekín acaba de aprobar su hoja de ruta más ambiciosa en años. El nuevo plan 2026-2030 no solo acelera su apuesta por tecnologías como 6G, computación cuántica o interfaces cerebro-computadora: también deja claro que China ya diseña su futuro como si la competencia global fuera una carrera de supervivencia.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Pekín imagina una batalla global donde el poder dependerá de quién controle antes la inteligencia artificial, la automatización, la energía avanzada y la infraestructura tecnológica del futuro. Para estrategia de datos, considerar diversificación de proveedores cloud y monitoreo de restricciones de exportación de chips.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://www.xataka.com/energia/mitad-centros-datos-eeuu-para-2026-corre-peligro-ha-puesto-al-pais-paradoja-geopolitica-china">Mitad de centros de datos de EE.UU. en riesgo por paradoja geopolítica con China</a></div>
+    <div class="item-meta">Xataka &mdash; 10 abril 2026</div>
+    <p>Estados Unidos (como Europa, China y los gigantes de Oriente Medio) están en plena carrera inmobiliaria de centros de datos. Nadie quiere quedarse atrás en la carrera de la IA y necesitan gigantescos recintos para entrenarla. Meta, Amazon, Microsoft y Google se van a invertir más de 650.000 millones de dólares este año para construir infraestructura de IA. Para ponerlo en contexto, es más de lo que costó el programa Apolo.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Se estima que los centros de datos consumirán hasta 12 GW de energía en 2026 solo en EE.UU., más de lo que necesitan diez millones de hogares. Considerar estrategias de carbon-aware computing y optimización de workloads para scheduling en horarios de bajo consumo energético.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://techstartups.com/2026/04/10/top-tech-news-today-april-10-2026/">Big Tech financia reactores nucleares modulares para alimentar IA</a></div>
+    <div class="item-meta">Tech Startups / Reuters &mdash; 10 abril 2026</div>
+    <p>Las principales empresas tecnológicas están invirtiendo en proyectos nucleares de próxima generación buscando electricidad confiable para data centers de IA. Estos acuerdos proveen capital a empresas nucleares y un camino comercial más viable.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>La IA está cambiando la ecuación energética. Si Microsoft, Google, Amazon y otros continúan asegurando suministros energéticos futuros, la generación eléctrica se convierte en una capa tecnológica estratégica, no solo en una utilidad de fondo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>III</span>Legislación</h2>
+  
+  <div class="item">
+    <div class="item-title"><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">EU AI Act: reglas de transparencia y sistemas de alto riesgo entran en vigor en agosto 2026</a></div>
+    <div class="item-meta">Comisión Europea &mdash; actualizado abril 2026</div>
+    <p>Las reglas de transparencia del AI Act entrarán en vigor en agosto de 2026. Las reglas para IA de alto riesgo entrarán en vigor en agosto de 2026 y agosto de 2027. Según el Artículo 57 del AI Act, cada Estado Miembro debe establecer al menos un sandbox regulatorio de IA a nivel nacional para el 2 de agosto de 2026.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Para sistemas desplegados en la UE, implementar logging de decisiones automatizadas, documentación de datasets de entrenamiento, y mecanismos de explicabilidad. Priorizar pipelines de data lineage para cumplir con requisitos de trazabilidad de modelos de alto riesgo.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://fixdata.com.mx/regulacion-inteligencia-artificial-mexico-2026/">México entra en "momento regulatorio" de IA con estrategia fragmentada</a></div>
+    <div class="item-meta">Fix Data &mdash; marzo 2026</div>
+    <p>La evolución de la IA en México ha dejado de ser una tendencia para consolidarse como el eje de una reconfiguración jurídica, económica y social. A finales de marzo de 2026, atravesamos lo que analistas denominan el "momento regulatorio" de México. La nueva legislación refuerza el derecho ciudadano a oponerse a decisiones 100% automatizadas. El procesamiento de datos biométricos para entrenar IA requiere "explicabilidad" superior, obligando a las empresas a rediseñar protocolos de ciberseguridad.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Para operaciones en México, implementar "kill-switches" en sistemas automatizados y documentar explicabilidad de decisiones algorítmicas. El debate se centra en si el IFT o la propuesta Comisión Nacional de Inteligencia Artificial (CONAIA) será el árbitro final.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://www.cuatrecasas.com/es/spain/propiedad-intelectual/art/que-esta-pasando-con-el-reglamento-de-ia">Retrasos en estándares técnicos del Reglamento de IA europeo</a></div>
+    <div class="item-meta">Cuatrecasas &mdash; actualizado 2026</div>
+    <p>Según un cronograma del Parlamento Europeo, los estándares técnicos del Reglamento de IA, inicialmente previstos para abril de 2025, estarán disponibles aproximadamente sobre la fecha límite de agosto de 2026. Esto implica que los operadores tendrán que adaptarse rápidamente a estos estándares para evitar riesgos regulatorios.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Mantener arquitecturas modulares que permitan actualizar componentes de compliance sin rehacer pipelines completos. Considerar adoption de frameworks como AI Risk Management Framework de NIST como baseline mientras se finalizan estándares europeos.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>IV</span>IA Chile</h2>
+  
+  <div class="item">
+    <div class="item-title"><a href="https://cenia.cl/2026/04/10/cenia-crea-dos-herramientas-para-medir-el-conocimiento-de-latam-gpt-sobre-la-region/">CENIA lanza benchmarks Trueque y Choclo para evaluar LLMs en contexto latinoamericano</a></div>
+    <div class="item-meta">CENIA &mdash; 10 abril 2026</div>
+    <p>Luego de la ceremonia de lanzamiento de Latam-GPT en febrero de 2026, el gran modelo de lenguaje ha seguido desarrollando entregables técnicos independientes. Uno de ellos son los benchmarks: pruebas estandarizadas que funcionan como exámenes para la IA, permitiendo detectar si un modelo está fallando, si alucina o a quién le está respondiendo. Trueque es un benchmark colaborativo que cuenta con 500 preguntas curadas manualmente en 20 países.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>A diferencia de otros exámenes generados automáticamente, Trueque apuesta por conocimiento humano local. Las preguntas evalúan dimensiones profundas de gastronomía regional, historia política, expresiones lingüísticas y tradiciones. Integrar estos benchmarks en pipelines de evaluación para modelos desplegados en LATAM.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://www.df.cl/el-techo-de-cristal-de-la-inteligencia-artificial-en-chile">Solo 3,6% de empresas chilenas ha escalado proyectos de IA con impacto medible</a></div>
+    <div class="item-meta">Diario Financiero &mdash; 9 abril 2026</div>
+    <p>El reciente reporte de MAS Analytics sobre la adopción de inteligencia artificial en Chile revela una realidad incómoda: apenas el 3,6% de las empresas ha logrado escalar proyectos con impacto medible.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>El gap entre pilotos y producción sugiere necesidad de MLOps maduros, data governance sólida y alineamiento con métricas de negocio. Priorizar quick wins con ROI demostrable antes de escalar proyectos complejos de IA.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://www.transmedia.cl/blog/2026/04/09/cada-vez-mas-talentos-utilizan-inteligencia-artificial-el-61-ya-la-incorporo-en-su-trabajo/">61% de trabajadores chilenos utiliza IA en tareas laborales</a></div>
+    <div class="item-meta">TransMedia / Laborum &mdash; 9 abril 2026</div>
+    <p>Según el estudio IA en el trabajo de Laborum, el 61% de las personas trabajadoras en Chile utiliza inteligencia artificial en sus tareas laborales, un aumento de 6 puntos porcentuales respecto al estudio en 2025, donde el 55% afirmó usarla. Chile ocupa el segundo lugar regional con el 60%, seguido de Argentina con el 57%.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Entre quienes no incorporan IA, el 44% no lo hizo porque desconocen cómo utilizarla. Oportunidad para programas de capacitación en herramientas de IA para equipos de datos, enfocados en prompt engineering y automatización de tareas repetitivas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>V</span>Data Engineering</h2>
+  
+  <div class="item">
+    <div class="item-title"><a href="https://thenewstack.io/from-etl-to-autonomy-data-engineering-in-2026/">De ETL a autonomía: data engineers pasan de constructores a estrategas</a></div>
+    <div class="item-meta">The New Stack / Snowflake &mdash; diciembre 2025</div>
+    <p>Data engineering está siendo reinventado. La disciplina que antes se centraba en construir y mantener pipelines se está convirtiendo en un rol más estratégico donde los ingenieros diseñan sistemas, validan código generado por IA. El próximo año marcará un punto de inflexión donde los data engineers transicionan de constructores a estrategas, preparándose para delegar tareas clave a agentes de IA.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Como el volumen de datos y la complejidad de pipelines continúa superando el crecimiento de equipos, la única forma de avanzar será adoptar automatización. Esto preparará el camino para agentes autónomos que gestionen y orquesten pipelines.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://gradientflow.substack.com/p/data-engineering-for-machine-users">Data Engineering en 2026: más del 80% de nuevas bases de datos creadas por agentes de IA</a></div>
+    <div class="item-meta">Gradient Flow &mdash; diciembre 2025</div>
+    <p>Data engineering está siendo jalado en dos direcciones: hacia más automatización (porque los agentes están haciendo trabajo real) y hacia más escrutinio (porque "suficientemente bueno" deja de ser aceptable cuando el software toma decisiones). Databricks recientemente reportó que más del 80% de las nuevas bases de datos en su plataforma ahora son lanzadas por agentes de IA en lugar de ingenieros humanos.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>La implicación práctica es simple: el stack antiguo — optimizado para datos tabulares, dashboards, batch ETL y workflows humanos — se sentirá cada vez más como una herramienta inadecuada. Considerar arquitecturas que soporten loops agénticos continuos (plan → execute → evaluate → improve → redeploy).</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-title"><a href="https://joereis.substack.com/p/where-data-engineering-is-heading">5+ tendencias de Data Engineering para 2026: AI-assisted será el default</a></div>
+    <div class="item-meta">Joe Reis Substack &mdash; febrero 2026</div>
+    <p>Predicción: Para fin de 2026, "AI-assisted" desaparecerá de las descripciones de trabajo porque será asumido. Si no estás usando la última generación de IA, no eres competitivo en el mercado. Según la encuesta, 82% de uso diario significa que IA ya es table stakes.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>Equipos disciplinados usarán IA para moverse más rápido con calidad. Equipos indisciplinados usarán IA para crear deuda técnica más rápido. El tema de 2026 es que las deudas no pagadas del pasado acarrean intereses a tasas de préstamos predatorios.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>VI</span>Fundamentos</h2>
+  
+  <div class="item">
+    <div class="item-title"><a href="https://arxiv.org/list/stat.ML/recent">AISTATS 2026 / ICLR 2026: papers relevantes en causal learning y eficiencia de inferencia</a></div>
+    <div class="item-meta">arXiv &mdash; abril 2026</div>
+    <p>Los últimos submissions a conferencias top reflejan tendencias clave: Trabajos aceptados en ICLR 2026 incluyen avances en optimization y control para ML. Papers en AISTATS 2026 cubren Inverse-Free Sparse Variational Gaussian Processes para reducir costos computacionales. Google presentó TurboQuant en ICLR 2026, un algoritmo que reduce significativamente el overhead de memoria del KV cache usando PolarQuant y compresión Johnson-Lindenstrauss cuantizada, acelerando el shift hacia desarrollo de IA efficiency-first.</p>
+    <div class="potencialidades">
+      <div class="potencialidades-label">Potencialidades técnicas</div>
+      <p>TurboQuant es particularmente relevante para deployments en edge y reducción de costos de inferencia. In-Place Test-Time Training permite adaptación dinámica en LLMs reutilizando bloques MLP existentes para actualizaciones eficientes chunk-wise, demostrando mejoras consistentes en benchmarks de contexto largo como RULER. Evaluar para fine-tuning continuo sin reentrenamiento completo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>◆</span>Vocabulario</h2>
+  
+  <div class="vocab-item">
+    <div class="vocab-term">Model Context Protocol (MCP)</div>
+    <div class="vocab-def">Protocolo de Anthropic que cruzó 97 millones de instalaciones. Se ha convertido en el mecanismo por defecto mediante el cual los agentes se conectan a herramientas externas, APIs y fuentes de datos. La Linux Foundation lo adoptó bajo gobernanza abierta.</div>
+  </div>
+  
+  <div class="vocab-item">
+    <div class="vocab-term">Frontier AI / IA Fronteriza</div>
+    <div class="vocab-def">Modelos que superan las capacidades humanas en tareas críticas, exigiendo nuevos mecanismos de seguridad y evaluación pre-despliegue. Claude Mythos Preview es el ejemplo más reciente de modelo clasificado como frontier por su desarrollador.</div>
+  </div>
+  
+  <div class="vocab-item">
+    <div class="vocab-term">Generative Engine Optimization (GEO)</div>
+    <div class="vocab-def">Dado que los sitios web oficiales apenas representan entre 5% y 10% de las fuentes que alimentan las respuestas generadas por IA, las compañías están migrando hacia estrategias de Optimización para Motores Generativos. Evolución del SEO para era de IA generativa.</div>
+  </div>
+  
+  <div class="vocab-item">
+    <div class="vocab-term">Agentic AI / IA Agéntica</div>
+    <div class="vocab-def">A medida que la IA agéntica pasa de experimentación a producción, la industria enfrenta los límites de arquitecturas de inferencia solo-GPU. Sistemas de IA que operan autónomamente ejecutando tareas multi-paso con mínima supervisión humana.</div>
+  </div>
+  
+  <div class="vocab-item">
+    <div class="vocab-term">AI Regulatory Sandbox</div>
+    <div class="vocab-def">Entornos controlados de prueba
+<footer>
+  Generado automáticamente con Claude &mdash; Sábado, 11 de abril de 2026
+</footer>
 </body>
 </html>
