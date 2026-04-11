@@ -1,8 +1,8 @@
 name: Daily Briefing
 
 on:
-  schedule:
-    - cron: "0 11 * * *"
+ # schedule:
+ #   - cron: "0 11 * * *"
   workflow_dispatch:
 
 # Denegar todo por defecto — cada job declara solo lo que necesita
